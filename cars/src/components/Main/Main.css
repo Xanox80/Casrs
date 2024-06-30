@@ -1,0 +1,87 @@
+main {
+  flex: 1;
+  width: 100%; /* Ensure full width */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  padding-top: 80px; /* Avoid overlap with the header */
+  background-color: var(
+    --main-background-color
+  ); /* Using variable for background color */
+  color: var(--text-color); /* Using variable for text color */
+}
+
+.main.light {
+  --main-background-color: #fff;
+  --text-color: #000;
+}
+
+.main.dark {
+  --main-background-color: #333;
+  --text-color: #fff;
+}
+
+.theme-toggle-container {
+  width: 100%; /* Ensure full width */
+  display: flex;
+  justify-content: flex-end; /* Align to the right */
+  padding: 0 20px; /* Add padding to the sides */
+  box-sizing: border-box; /* Include padding in element's width */
+}
+
+.car-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  justify-items: center;
+  width: 100%; /* Ensure full width */
+  max-width: 1200px; /* Maximum width for the grid */
+}
+
+.car {
+  background-color: var(--car-background-color);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  text-align: center;
+}
+
+.main.light .car {
+  --car-background-color: #fff;
+}
+
+.main.dark .car {
+  --car-background-color: #444;
+  color: #fff;
+}
+
+.car:hover {
+  transform: translateY(-5px);
+}
+
+.car h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.car img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.theme-toggle {
+  padding: 10px 20px;
+  cursor: pointer;
+  border: none;
+  background-color: black;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.main.dark .theme-toggle {
+  background-color: white;
+  color: black;
+}
