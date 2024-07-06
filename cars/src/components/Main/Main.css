@@ -1,15 +1,15 @@
-main {
+.main {
   flex: 1;
-  width: 100%; /* Ensure full width */
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px;
-  padding-top: 80px; /* Avoid overlap with the header */
-  background-color: var(
-    --main-background-color
-  ); /* Using variable for background color */
-  color: var(--text-color); /* Using variable for text color */
+  padding-top: 80px;
+  background-color: var(--main-background-color, #f0f0f0);
+  color: var(--text-color, #000);
+  box-sizing: border-box;
+  margin: 0;
 }
 
 .main.light {
@@ -19,15 +19,7 @@ main {
 
 .main.dark {
   --main-background-color: #333;
-  --text-color: #fff;
-}
-
-.theme-toggle-container {
-  width: 100%; /* Ensure full width */
-  display: flex;
-  justify-content: flex-end; /* Align to the right */
-  padding: 0 20px; /* Add padding to the sides */
-  box-sizing: border-box; /* Include padding in element's width */
+  --text-color: #eee;
 }
 
 .car-list {
@@ -35,17 +27,20 @@ main {
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 20px;
   justify-items: center;
-  width: 100%; /* Ensure full width */
-  max-width: 1200px; /* Maximum width for the grid */
+  width: 100%;
+  max-width: 1380px;
 }
 
 .car {
-  background-color: var(--car-background-color);
+  background-color: var(--car-background-color, #fff);
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .main.light .car {
@@ -54,7 +49,7 @@ main {
 
 .main.dark .car {
   --car-background-color: #444;
-  color: #fff;
+  color: #eee;
 }
 
 .car:hover {
@@ -72,16 +67,122 @@ main {
   border-radius: 8px;
 }
 
-.theme-toggle {
+.car p {
+  margin: 10px 0;
+}
+
+.car button {
   padding: 10px 20px;
   cursor: pointer;
   border: none;
-  background-color: black;
+  background-color: #007bff;
   color: #fff;
-  border-radius: 5px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
 }
 
-.main.dark .theme-toggle {
+.car button:hover {
+  background-color: #0056b3;
+}
+
+.main.dark .car button {
+  background-color: #0056b3;
+}
+
+.main.dark .car button:hover {
+  background-color: #003d82;
+}
+
+.filter-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.filter-section button {
+  padding: 10px 20px;
+  cursor: pointer;
+  border: none;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.filter-section button:hover {
+  background-color: #0056b3;
+}
+
+.filter-section .filter-icon {
+  position: relative;
+  cursor: pointer;
+  right: -740px;
+}
+
+.filter-section .dropdown-menu {
+  position: absolute;
+  top: 30px;
+  right: 0;
   background-color: white;
-  color: black;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.filter-section .dropdown-menu {
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+}
+
+.car {
+  border: 1px solid #ccc;
+  padding: 16px;
+  margin: 16px 0;
+  cursor: pointer;
+}
+
+.car img {
+  width: 100%;
+  height: auto;
+}
+
+.car button {
+  margin-top: 8px;
+}
+
+.filter-section .dropdown-menu button {
+  display: flex;
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+}
+
+.filter-section .dropdown-menu button:hover {
+  background-color: #0056b3;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background: #f8f8f8;
+  padding: 5px 10px;
+  border-radius: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar input {
+  border: none;
+  background: none;
+  margin-left: 10px;
+  outline: none;
 }

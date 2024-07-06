@@ -1,10 +1,20 @@
+/* Footer.css */
+
 footer {
-  background-color: #333;
-  color: #fff;
-  text-align: center;
-  padding: 10px 0;
-  position: fixed;
-  bottom: 0;
-  left: 0;
   width: 100%;
+  padding: 20px;
+  background-color: var(--footer-background-color, #f0f0f0);
+  color: var(--footer-text-color, #000);
+  box-sizing: border-box;
+  margin: 0; /* Додаємо це */
+}
+
+.footer-content {
+  max-width: 1380px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer-content p {
+  margin: 0; /* Забезпечуємо відсутність додаткових відступів */
 }
